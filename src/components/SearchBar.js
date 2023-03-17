@@ -1,15 +1,21 @@
 import {useState} from 'react'
 
-export function SearchBar(props) {
+function SearchBar(setSearch) {
 
     const [query, setQuery] = useState('')
           
     const handleChange = (e) => {
-
+        setQuery(e.target.value)
     }
+    
+    /*useEffect(() => {
+        setSearch(query)
+
+    }, [query])*/
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setSearch(query)
     }
 
             return (
