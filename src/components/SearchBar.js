@@ -4,17 +4,6 @@ import {SearchContext} from "../Context/SearchContext";
 function SearchBar(props) {
 
     const {term, handleSearch} = useContext(SearchContext);
-  
-    
-    /*useEffect(() => {
-        setSearch(query)
-
-    }, [query])
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setSearch(query)
-    }*/
 
             return (
                 <form>
@@ -26,4 +15,3 @@ function SearchBar(props) {
 
 export default SearchBar
 
-//not showing up in github
