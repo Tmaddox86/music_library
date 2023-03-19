@@ -1,13 +1,12 @@
 //import (useState) from 'react'
 import {useContext} from 'react'
-import {DataContext} from '../GalleryItem'
+import {DataContext} from './GalleryItem'
 import GalleryItem from './GalleryItem';
 //import {useContext, useState} from 'react'
 
-function Gallery({data}) {
+export function Gallery({}) {
 
         const data = useContext(DataContext)
-        let data = useContext(DataContext)
         const songs = data.filter((result) => result.kind === "song")
         let [Bool, setBool] = useState(true);
 
@@ -23,5 +22,5 @@ function Gallery({data}) {
 [c, b, a, d, e]
  0, 1, 2, 3, 4*/
 
-export default Gallery;
+
 //not showing up in git resporitory

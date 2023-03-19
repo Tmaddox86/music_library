@@ -1,11 +1,11 @@
 //not showing up in github
 
 import {useState} from 'react'
+//import {DataContext} from './Context/Datacontext'
 
 function GalleryItem({song}) {
 
-    let [isExpanded, setIsExpanded] = useState(false);
-    let [darkMode, setDarkMode] = useState(DataContext)
+    let [viewIsExpanded, setIsExpanded] = useState(false);
     const {trackName} = {song};
     
     const simpleStyle = {
@@ -45,16 +45,18 @@ function GalleryItem({song}) {
                 <h4>{song.item.releaseDate}</h4>
             </div>
         )
-        return isExpanded ? detailView : simpleView
+    
     }
-}
-    /*return (
+
+    return (
         <div onClick ={() => setIsExpanded(!isExpanded)} 
          style={{'display' : 'inline-block'}}>
-         {isExpanded ? detailView : simpleView}
+         {viewIsExpanded ? detailView : simpleView}
+         <p>One Gallery Item</p>
         </div>
     )
-    const handleClick = () => {
+}
+    /*const handleClick = () => {
         setIsExpanded(!isExpanded);
     }*/
 
