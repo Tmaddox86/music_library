@@ -1,11 +1,13 @@
+//import (useState) from 'react'
 import {useContext} from 'react'
 import {DataContext} from '../GalleryItem'
 import GalleryItem from './GalleryItem';
-import {useContext, useState} from 'react'
+//import {useContext, useState} from 'react'
 
-function Gallery({songs}) {
+function Gallery({data}) {
 
         const data = useContext(DataContext)
+        let data = useContext(DataContext)
         const songs = data.filter((result) => result.kind === "song")
         let [Bool, setBool] = useState(true);
 

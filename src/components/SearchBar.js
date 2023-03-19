@@ -19,13 +19,15 @@ function SearchBar(setSearch) {
     }
 
             return (
-                <form onSubmit= {handleSubmit}>
-                    <input type= "text" value={query} onChange = {handleChange}/>
-                    <input type= "submit"/>
+                <form>
+                    <input ref={term} type="text" placeholder="Search Here"></input>
+                    <button onclick = {(e) => handleSearch(e, term)}> Submit </button>
+                  
+                  
                 </form>
             )
         }
 
-export default SearchBar;
+export default SearchBar
 
 //not showing up in github
