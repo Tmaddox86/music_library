@@ -3,10 +3,9 @@
 import {useState} from 'react'
 //import {DataContext} from './Context/Datacontext'
 
-function GalleryItem({song}) {
+function GalleryItem(props) {
 
-    let [viewIsExpanded, setIsExpanded] = useState(false);
-    const {trackName} = {song};
+    let [view, setView] = useState(false);
     
     const simpleStyle = {
         'width': '25vw',
@@ -30,8 +29,8 @@ function GalleryItem({song}) {
     const simpleView = () => {
         return (
             <div style={simpleStyle}>
-                <h3>{song.item.trackName}</h3>
-                <h4>{song.item.collectionName}</h4>
+                <h3>{props.item.trackName}</h3>
+                <h4>{props.item.collectionName}</h4>
             </div>
         )
     }
@@ -39,19 +38,19 @@ function GalleryItem({song}) {
     const detailView = () => {
         return (
             <div style={detailStyle}>
-                <h2>{song.item.trackName}</h2>
-                <h3>{song.item.collectionName}</h3>
-                <h4>{song.item.primaryGenreName}</h4>
-                <h4>{song.item.releaseDate}</h4>
+                <h2>{props.item.trackName}</h2>
+                <h3>{props.item.collectionName}</h3>
+                <h4>{props.item.primaryGenreName}</h4>
+                <h4>{props.item.releaseDate}</h4>
             </div>
         )
     
     }
 
     return (
-        <div onClick ={() => setIsExpanded(!isExpanded)} 
+        <div onClick ={() => setView(!view)} 
          style={{'display' : 'inline-block'}}>
-         {viewIsExpanded ? detailView : simpleView}
+         {view ? detailView() : simpleView()}
          <p>One Gallery Item</p>
         </div>
     )
