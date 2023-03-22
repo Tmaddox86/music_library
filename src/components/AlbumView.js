@@ -2,6 +2,8 @@
 // component to serve specific data about our artist
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
 
 function AlbumView() {
     const navigate = useNavigate()
