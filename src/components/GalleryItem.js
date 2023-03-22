@@ -1,5 +1,5 @@
 //not showing up in github
-
+import {Link} from 'react-router-dom'
 import {useState} from 'react'
 //import {DataContext} from './Context/Datacontext'
 
@@ -40,8 +40,8 @@ function GalleryItem({term}) {
         return (
             <div style={detailStyle}>
                 <h2>{term.item.trackName}</h2>
-                <h3> <a href={`/album/${term.item.collectionId}`}>{term.item.collectionName}</a></h3>
-                <h3> <a href={`/artist/${term.item.artistId}`}>{term.item.artistId}</a></h3>
+                <h3> <Link to={`/album/${term.item.collectionId}`}>{term.item.collectionName}</Link></h3>
+                <h3> <Link to={`/artist/${term.item.artistId}`}>{term.item.artistId}</Link></h3>
                 <h4>{term.item.primaryGenreName}</h4>
                 <h4>{term.item.releaseDate}</h4>
             </div>
