@@ -4,7 +4,7 @@ import {DataContext} from './GalleryItem'
 import GalleryItem from './GalleryItem';
 //import {useContext, useState} from 'react'
 
-export function Gallery() {
+function Gallery() {
 
         const data = useContext(DataContext)
         const display = data.map((item, index) => {
@@ -17,4 +17,10 @@ export function Gallery() {
               {display}
             </div>
         )
+   
 }
+
+
+
+
+//not showing up in git resporitory

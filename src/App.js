@@ -8,12 +8,13 @@ import AlbumView from './components/AlbumView.js';
 import ArtistView from './components/ArtistView.js';
 
 function App() {
-  
+  //let [search, setSearch] = useState ('the greatful dead')
   let [message, setMessage] = useState('Search for Music!')
   let [data, setData] = useState([])
-  let [numberRef] = useRef(1);
+ // let [numberRef] = useRef(1);
   let searchInput = useRef('')
 
+<<<<<<< HEAD
   const API_URL = 'https://itunes.apple.com/search?term='
 
   const handleSearch = (e, term) => {
@@ -31,6 +32,25 @@ function App() {
 		}
 		fetchData()
 	}
+=======
+const API_URL = 'https://itunes.apple.com/search?term='
+  
+  const handleSearch = (e, term) => {
+    e.preventDefault()
+    
+    const fetchData = async () => {
+      document.title = `${search} Music`
+      const response = await fetch(API_URL + search)
+      const resData = await response.json()
+      if (resData.results.length > 0) {
+        setData(resData.results)
+      } else {
+        setMessage('Not Found')
+      }
+    }
+    fetchData()
+  } 
+>>>>>>> with_router
 
   return (
     <div className ='App'>
@@ -38,6 +58,7 @@ function App() {
         term: searchInput, handleSearch: handleSearch
       }}> 
       <SearchBar handleSearch={handleSearch}/> 
+      <SearchBar/> 
       </SearchContext.Provider>
       {message}
       <DataContext.Provider value = {[data]}>
