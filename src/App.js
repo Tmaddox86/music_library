@@ -1,11 +1,11 @@
 import  {useEffect, useState, useRef } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Gallery from './components/Gallery.js';
-import SearchBar from './components/SearchBar.js';
-import {DataContext} from './Context/DataContext.js';
-import {SearchContext} from './Context/SearchContext.js'
-import AlbumView from './components/AlbumView.js'
-import ArtistView from './components/ArtistView.js'
+import Gallery from './components/Gallery'
+import SearchBar from './components/SearchBar';
+import {DataContext} from './Context/DataContext';
+import {SearchContext} from './Context/SearchContext'
+import AlbumView from './components/AlbumView'
+import ArtistView from './components/ArtistView'
 
 function App() {
   

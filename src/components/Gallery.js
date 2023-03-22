@@ -4,7 +4,7 @@ import {DataContext} from './GalleryItem'
 import GalleryItem from './GalleryItem';
 //import {useContext, useState} from 'react'
 
-export function Gallery({}) {
+function Gallery() {
 
         const data = useContext(DataContext)
         const songs = data.filter((result) => result.kind === "song")
