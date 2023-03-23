@@ -1,4 +1,4 @@
-import  {useEffect, useState, useRef } from 'react';
+/*import  {useEffect, useState, Suspense } from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Gallery from './components/Gallery.js';
 import SearchBar from './components/SearchBar.js';
@@ -6,6 +6,14 @@ import {DataContext} from './Context/DataContext.js';
 import {SearchContext} from './Context/SearchContext.js'
 import AlbumView from './components/AlbumView.js';
 import ArtistView from './components/ArtistView.js';
+import { createResource as fetchData } from './helper'*/
+
+
+import React, { Suspense } from 'react';
+import './App.css'; 
+
+  
+
 
 function App() {
   //let [search, setSearch] = useState ('the greatful dead')
@@ -15,6 +23,13 @@ function App() {
   let searchInput = useRef('')
 
   const API_URL = 'https://itunes.apple.com/search?term='
+
+  useEffect(() => {
+    if (searchTerm) {
+        setData(fetchData(searchTerm))
+    }
+}, [searchTerm])
+
 
   const handleSearch = (e, term) => {
     e.preventDefault()
@@ -32,6 +47,11 @@ function App() {
 		fetchData()
 	}
 
+
+}
+
+const renderGallery =() => {
+  if (data) {
   return (
     <div className ='App'>
       <SearchContext.Provider value={{
@@ -46,6 +66,15 @@ function App() {
       </DataContext.Provider>
     </div>
   )
+  }
+return (
+ <div className="App">
+  <SearchBar handleSearch={handleSearch}/>
+  {message}
+  {renderGallery()}
+</div>
+)
+
 }
 
 export default App;
