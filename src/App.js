@@ -14,7 +14,6 @@ function App() {
  // let [numberRef] = useRef(1);
   let searchInput = useRef('')
 
-<<<<<<< HEAD
   const API_URL = 'https://itunes.apple.com/search?term='
 
   const handleSearch = (e, term) => {
@@ -32,7 +31,6 @@ function App() {
 		}
 		fetchData()
 	}
-=======
 const API_URL = 'https://itunes.apple.com/search?term='
   
   const handleSearch = (e, term) => {
@@ -50,7 +48,6 @@ const API_URL = 'https://itunes.apple.com/search?term='
     }
     fetchData()
   } 
->>>>>>> with_router
 
   return (
     <div className ='App'>
